@@ -1,0 +1,15 @@
+# Ambiente virtual
+venv/
+
+# Cache Python
+__pycache__/
+
+# Arquivos compilados
+*.pyc
+
+# Build executável
+dist/
+build/
+
+# VSCode
+.vscode/
