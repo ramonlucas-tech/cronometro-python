@@ -15,7 +15,7 @@ Projeto desktop em Python usando Tkinter.
 - Pausar
 - Resetar
 - Janela Pop-up
-- Sempre no topo
+- Sempre no topo 
 
 ## Executar
 
