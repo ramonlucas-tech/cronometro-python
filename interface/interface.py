@@ -1,5 +1,10 @@
 # Biblioteca gráfica
-import tkinter as tk
+import customtkinter as ctk
+
+# importando darkmode
+ctk.set_appearance_mode("dark")
+#cores dos botões
+ctk.set_default_color_theme("blue")
 
 # Importa Timer
 from core.time import Timer
@@ -14,13 +19,13 @@ class Janela:
         self.timer = Timer()
 
         # Cria janela principal
-        self.janela = tk.Tk()
+        self.janela = ctk.CTk()
 
         # Título da janela
-        self.janela.title("Cronômetro Python")
+        self.janela.title("Cronômetro")
 
         # Tamanho
-        self.janela.geometry("350x220")
+        self.janela.geometry("250x150")
 
         # Impede redimensionamento
         self.janela.resizable(False, False)
@@ -29,7 +34,7 @@ class Janela:
         self.janela.attributes("-topmost", True)
 
         # Texto do cronômetro
-        self.label = tk.Label(
+        self.label = ctk.CTkLabel(
             self.janela,
             text="00:00:00",
             font=("Arial", 40)
@@ -39,11 +44,11 @@ class Janela:
         self.label.pack(pady=30)
 
         # Frame dos botões
-        frame = tk.Frame(self.janela)
+        frame = ctk.CTkFrame(self.janela)
         frame.pack()
 
         # Botão iniciar
-        self.btn_iniciar = tk.Button(
+        self.btn_iniciar = ctk.CTkButton(
             frame,
             text="Iniciar",
             width=10,
@@ -53,7 +58,7 @@ class Janela:
         self.btn_iniciar.grid(row=0, column=0, padx=5)
 
         # Botão pausar
-        self.btn_pausar = tk.Button(
+        self.btn_pausar = ctk.CTkButton(
             frame,
             text="Pausar",
             width=10,
@@ -63,7 +68,7 @@ class Janela:
         self.btn_pausar.grid(row=0, column=1, padx=5)
 
         # Botão resetar
-        self.btn_resetar = tk.Button(
+        self.btn_resetar = ctk.CTkButton(
             frame,
             text="Resetar",
             width=10,
@@ -79,7 +84,7 @@ class Janela:
     def atualizar(self):
 
         # Atualiza texto
-        self.label.config(
+        self.label.configure(
             text=self.timer.obter_tempo()
         )
 
